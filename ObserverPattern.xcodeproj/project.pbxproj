@@ -9,17 +9,23 @@
 /* Begin PBXBuildFile section */
 		D595C9B42A84FB7600A37024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B32A84FB7600A37024 /* AppDelegate.swift */; };
 		D595C9B62A84FB7600A37024 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B52A84FB7600A37024 /* SceneDelegate.swift */; };
-		D595C9B82A84FB7600A37024 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B72A84FB7600A37024 /* ViewController.swift */; };
+		D595C9B82A84FB7600A37024 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B72A84FB7600A37024 /* MainViewController.swift */; };
 		D595C9BD2A84FB7A00A37024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D595C9BC2A84FB7A00A37024 /* Assets.xcassets */; };
+		D595C9CB2A85114100A37024 /* BankTransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9CA2A85114100A37024 /* BankTransactionService.swift */; };
+		D595C9CE2A85116C00A37024 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9CD2A85116C00A37024 /* Transaction.swift */; };
+		D595C9D12A85118900A37024 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9D02A85118900A37024 /* TransactionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D595C9B02A84FB7600A37024 /* ObserverPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObserverPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D595C9B32A84FB7600A37024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D595C9B52A84FB7600A37024 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D595C9B72A84FB7600A37024 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D595C9B72A84FB7600A37024 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D595C9BC2A84FB7A00A37024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D595C9C12A84FB7A00A37024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D595C9CA2A85114100A37024 /* BankTransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTransactionService.swift; sourceTree = "<group>"; };
+		D595C9CD2A85116C00A37024 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		D595C9D02A85118900A37024 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +58,11 @@
 		D595C9B22A84FB7600A37024 /* ObserverPattern */ = {
 			isa = PBXGroup;
 			children = (
+				D595C9CF2A85117E00A37024 /* Enum */,
+				D595C9CC2A85116300A37024 /* Model */,
+				D595C9C92A85111700A37024 /* Service */,
+				D595C9C82A85110300A37024 /* View */,
 				D595C9C72A84FBBB00A37024 /* App */,
-				D595C9B72A84FB7600A37024 /* ViewController.swift */,
 				D595C9BC2A84FB7A00A37024 /* Assets.xcassets */,
 				D595C9C12A84FB7A00A37024 /* Info.plist */,
 			);
@@ -67,6 +76,38 @@
 				D595C9B52A84FB7600A37024 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D595C9C82A85110300A37024 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D595C9B72A84FB7600A37024 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D595C9C92A85111700A37024 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D595C9CA2A85114100A37024 /* BankTransactionService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D595C9CC2A85116300A37024 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D595C9CD2A85116C00A37024 /* Transaction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D595C9CF2A85117E00A37024 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D595C9D02A85118900A37024 /* TransactionType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D595C9B82A84FB7600A37024 /* ViewController.swift in Sources */,
+				D595C9B82A84FB7600A37024 /* MainViewController.swift in Sources */,
 				D595C9B42A84FB7600A37024 /* AppDelegate.swift in Sources */,
+				D595C9CB2A85114100A37024 /* BankTransactionService.swift in Sources */,
 				D595C9B62A84FB7600A37024 /* SceneDelegate.swift in Sources */,
+				D595C9D12A85118900A37024 /* TransactionType.swift in Sources */,
+				D595C9CE2A85116C00A37024 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
