@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D59031D92A97E97400501133 /* TransactionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59031D82A97E97400501133 /* TransactionObserver.swift */; };
 		D595C9B42A84FB7600A37024 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B32A84FB7600A37024 /* AppDelegate.swift */; };
 		D595C9B62A84FB7600A37024 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B52A84FB7600A37024 /* SceneDelegate.swift */; };
 		D595C9B82A84FB7600A37024 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D595C9B72A84FB7600A37024 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D59031D82A97E97400501133 /* TransactionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionObserver.swift; sourceTree = "<group>"; };
 		D595C9B02A84FB7600A37024 /* ObserverPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObserverPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D595C9B32A84FB7600A37024 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D595C9B52A84FB7600A37024 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D59031D72A97E95F00501133 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				D59031D82A97E97400501133 /* TransactionObserver.swift */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		D595C9A72A84FB7600A37024 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		D595C9B22A84FB7600A37024 /* ObserverPattern */ = {
 			isa = PBXGroup;
 			children = (
+				D59031D72A97E95F00501133 /* Observer */,
 				D595C9CF2A85117E00A37024 /* Enum */,
 				D595C9CC2A85116300A37024 /* Model */,
 				D595C9C92A85111700A37024 /* Service */,
@@ -180,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D595C9B82A84FB7600A37024 /* MainViewController.swift in Sources */,
+				D59031D92A97E97400501133 /* TransactionObserver.swift in Sources */,
 				D595C9B42A84FB7600A37024 /* AppDelegate.swift in Sources */,
 				D595C9CB2A85114100A37024 /* BankTransactionService.swift in Sources */,
 				D595C9B62A84FB7600A37024 /* SceneDelegate.swift in Sources */,

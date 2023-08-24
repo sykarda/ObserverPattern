@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(newTransactionHasArrived), name: NSNotification.Name("NEW-TRANSACTION"), object: nil)
 
+        BankTransactionService.shared.setObserver(with: self)
+
         BankTransactionService.shared.fetchTransactions()
     }
 
@@ -29,5 +31,11 @@ class MainViewController: UIViewController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 
+}
+
+extension MainViewController: TransactionObserver {
+    func transactionArrived(with transaction: Transaction) {
+        self.present(createAlert(with: transaction), animated: true)
+    }
 }
 
