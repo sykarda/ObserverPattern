@@ -12,13 +12,18 @@ class BankTransactionService {
 
     static let shared = BankTransactionService()
 
-    func fetchTransactions() {
-        // Mock transaction
-        let newTransaction = Transaction(type: .incoming, amount: Double.random(in: 1.0...100.0))
-        transactions.append(newTransaction)
+    init() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: fetchTransactions)
     }
 
-    private func newTransactionAdded(_ transaction: Transaction) {
-        NotificationCenter.default.post(name: NSNotification.Name("newTransaction"), object: transaction)
+    func fetchTransactions() {
+        // Mock transaction
+        let newTransaction = Transaction(type: .outgoing, amount: Double.random(in: 1.0...100.0))
+        addNewTransaction(newTransaction)
+    }
+
+    private func addNewTransaction(_ transaction: Transaction) {
+        transactions.append(transaction)
+        NotificationCenter.default.post(name: NSNotification.Name("NEW-TRANSACTION"), object: transaction)
     }
 }

@@ -11,7 +11,22 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        NotificationCenter.default.addObserver(self, selector: #selector(newTransactionHasArrived), name: NSNotification.Name("NEW-TRANSACTION"), object: nil)
+
+        BankTransactionService.shared.fetchTransactions()
+    }
+
+    @objc private func newTransactionHasArrived(_ notification: Notification) {
+        print("New Transaction Arriverd")
+        guard let transaction = notification.object as? Transaction else { return }
+        self.present(createAlert(with: transaction), animated: true)
+    }
+
+    private func createAlert(with transaction: Transaction) -> UIAlertController {
+        let title = transaction.type == .incoming ? "Incoming money" : "Outgoing money"
+        let message = transaction.type == .incoming ? "You have money 😁" : "You lost money 😕"
+        return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 
 }
