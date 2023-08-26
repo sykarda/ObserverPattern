@@ -10,11 +10,13 @@ import Foundation
 enum ObserverType {
     case notificationCenterObserver
     case protocolBasedObserver
+    case closureBasedObserver
 }
 
 class BankTransactionService {
     var transactions = [Transaction]()
     var observer: TransactionObserver?
+    var closureArray = [(Transaction) -> Void]()
 
     static let shared = BankTransactionService()
 
@@ -25,7 +27,7 @@ class BankTransactionService {
     func fetchTransactions() {
         // Mock transaction
         let newTransaction = Transaction(type: .incoming, amount: Double.random(in: 1.0...100.0))
-        newTransactionArrived(newTransaction, observerType: .protocolBasedObserver)
+        newTransactionArrived(newTransaction, observerType: .closureBasedObserver)
     }
 
     private func newTransactionArrived(_ transaction: Transaction, observerType: ObserverType) {
@@ -36,6 +38,10 @@ class BankTransactionService {
             NotificationCenter.default.post(name: NSNotification.Name("NEW-TRANSACTION"), object: transaction)
         case .protocolBasedObserver:
             observer?.transactionArrived(with: transaction)
+        case .closureBasedObserver:
+            closureArray.forEach { closure in
+                closure(transaction)
+            }
         }
     }
 
@@ -44,5 +50,11 @@ class BankTransactionService {
 extension BankTransactionService {
     func setObserver(with observer: TransactionObserver) {
         self.observer = observer
+    }
+}
+
+extension BankTransactionService {
+    func addNewClosureObserver(closure: @escaping (Transaction) -> Void) {
+        closureArray.append(closure)
     }
 }

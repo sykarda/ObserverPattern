@@ -16,6 +16,10 @@ class MainViewController: UIViewController {
 
         BankTransactionService.shared.setObserver(with: self)
 
+        BankTransactionService.shared.addNewClosureObserver { transaction in
+            self.present(self.createAlert(with: transaction), animated: true)
+        }
+
         BankTransactionService.shared.fetchTransactions()
     }
 
